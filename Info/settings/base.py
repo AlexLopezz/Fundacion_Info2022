@@ -8,10 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-<<<<<<< HEAD
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-=======
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-&)u3+!=r%t7^c774^7(r6&=$v=iq3k1hnv*6i8d$3n=1t46df*'
 
@@ -21,7 +21,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
->>>>>>> 6b26a3f5790fdd6b3c1d4d0f9077165d2ae4dc5e
 # Application definition
 
 INSTALLED_APPS = [
@@ -31,10 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'apps',
-=======
->>>>>>> 6b26a3f5790fdd6b3c1d4d0f9077165d2ae4dc5e
 ]
 
 MIDDLEWARE = [
@@ -123,9 +119,6 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
-<<<<<<< HEAD
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-=======
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
->>>>>>> 6b26a3f5790fdd6b3c1d4d0f9077165d2ae4dc5e
+
