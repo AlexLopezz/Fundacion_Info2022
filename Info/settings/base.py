@@ -11,9 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-
-AUTH_USER_MODEL = 'usuarios.Usuario'
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
@@ -23,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.usuarios',
+    'apps',
 ]
 
 MIDDLEWARE = [
@@ -41,7 +40,7 @@ ROOT_URLCONF = 'Info.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(BASE_DIR),'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,3 +100,5 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
