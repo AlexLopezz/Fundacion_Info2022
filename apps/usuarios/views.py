@@ -1,23 +1,20 @@
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
-
+from django.shortcuts import render, redirect
+from .forms import UserRegisterForm
 
 def Home(request):
-    MUESTRA = '<html> <body> <h1> PROYECTO GRUPO 1. BOTELLAS DE AMOR </h1> </body> </html>'
-    return HttpResponse(request)
+	return render(request,'usuarios/home.html')
+
 # Create your views here.
-
-
-def registro(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+def registroUser(request):
+    if request.method=="POST":
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data('username')
-            message.success(request, f'Usuario {username} creado')
+            form.save()
+            username= form.cleaned_data['username']
+            return redirect('home')
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
     
-    context = {'form' : form}
-    return render(request, 'registro.html')
+    data = {'form' : form}
+
+    return render(request, 'registration/registro.html', data)
