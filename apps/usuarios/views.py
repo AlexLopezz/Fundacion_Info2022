@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 
 def Home(request):
-	return render(request,'usuarios/home.html')
+	return render(request,'home.html')
 
 # Create your views here.
 def registroUser(request):
