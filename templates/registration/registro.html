@@ -9,12 +9,13 @@
 <body>
     <h1>REGISTRARSE</h1>
     <form action="" method="POST">
+        {%csrf_token%}
+    
+        {{ form.as_p}}
 
-    {%csrf_token%}
-    {{ form.as_p}}
-
+        <button type="submit">REGISTRARSE </button>
+    
     </form>
 
-    <input type="submit" value="REGISTRARSE">
 </body>
 </html>
