@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
-from django.contrib.auth.forms import UserCreationForm
-
 
 # Create your views here.
 def registroUsuario(request):
