@@ -12,6 +12,7 @@ class Categoria(models.Model):
 class Noticia(models.Model):
     titulo = models.CharField(max_length=150)
     autor = models.CharField(max_length=50, null = True, blank=True)
+    fechaCreacion = models.DateField(auto_now_add=True)
     contenido = models.TextField()
     imagen = models.ImageField(upload_to= 'noticias', null=True, blank = True)
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE, null=True)
