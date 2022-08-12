@@ -1,20 +1,44 @@
+{% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'registration/registro.css' %}">
     <title>REGISTRO</title>
 </head>
 <body>
-    <h1>REGISTRARSE</h1>
     <form action="" method="POST">
-        {%csrf_token%}
-    
-        {{ form.as_p}}
-
+        <img class="" src="/static/img/logo.png" alt="">
+            <div id="div_id_username" class="form-group">
+                <label for="id_username" class=" requiredField"> Nombre de usuario<span class="asteriskField">*</span> </label>
+                <div> 
+                    <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="" id="id_username">
+                </div>
+            </div>
+            <div id="div_id_email" class="form-group">
+                <label for="id_email" class=" requiredField"> Email <span class="asteriskField">*</span> </label>
+                <div>
+                    <input type="email" name="email" class="emailinput form-control" required="" id="id_email">
+                </div>
+            </div>
+            <div id="div_id_password1" class="form-group">
+                <label for="id_password1" class=" requiredField"> Contraseña <span class="asteriskField">*</span> </label>
+                <div>
+                    <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password1">
+                    <small id="hint_id_password1" class="form-text text-muted"> </small>
+                </div> 
+            </div>
+            <div id="div_id_password2" class="form-group">
+                <label for="id_password2" class=" requiredField"> Confirmación de contraseña <span class="asteriskField">*</span> </label>
+                <div>
+                    <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="" id="id_password2"> 
+                </div>
+            </div>  
+ </table>
         <button type="submit">REGISTRARSE </button>
-    
     </form>
 
 </body>
