@@ -11,6 +11,7 @@
 </head>
 <body>
     <form action="" method="POST">
+        {% csrf_token %}
         <img class="" src="/static/img/logo.png" alt="">
             <div id="div_id_username" class="form-group">
                 <label for="id_username" class=" requiredField"> Nombre de usuario<span class="asteriskField">*</span> </label>

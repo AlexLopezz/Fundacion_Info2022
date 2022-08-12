@@ -1,9 +1,4 @@
 {% load static %}
-<<<<<<< HEAD
-=======
-
-
->>>>>>> ee8479ec9e7466bb4ab6f92f50d5b4ce7aac343a
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +11,10 @@
 <body>
     
     <form action="" method="post">
+        {% csrf_token %}
         <img class="" src="/static/img/logo.png" alt="">
         
-        <input type="hidden" name="csrfmiddlewaretoken" value="gLb5kaf6o8hBPYiAELNib8PEEZGPjgpTCaQIHI8vxEc7Iau12ayT5a55t9VtlIUj">
-
-        <p><label for="id_username">Nombre de usuario:</label> <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
-<p><label for="id_password">Contraseña:</label> <input type="password" name="password" autocomplete="current-password" required="" id="id_password"></p>
+        {{ form.as_p }}
 
         <button type="submit">Iniciar sesión</button>
     </form>
