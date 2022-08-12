@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTICIAS</title>
+</head>
+<body>
+    <section>
+        {% for n in noticias %}
+        <article>
+            <h2> {{ n.titulo }} </h2>
+            <footer> Categoria: {{ n.categoria }} - Fecha de creacion: {{ n.fechaCreacion }}</footer>
+            <p> {{ n.contenido }}</p>
+            <img src="{{ n.imagen.url }}">
+            {% if n.autor %}
+            <footer> Autor: {{ n.autor }} </footer>
+            {% else %}
+            <footer> Autor: Anonimo</footer>
+            {% endif %}     
+        </article>
+    </section>
+        {% endfor %}
+</body>
+</html>
