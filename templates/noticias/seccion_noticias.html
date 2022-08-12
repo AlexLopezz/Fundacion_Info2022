@@ -7,6 +7,7 @@
     <title>NOTICIAS</title>
 </head>
 <body>
+    {% if noticias %}
     <section>
         {% for n in noticias %}
         <article>
@@ -22,5 +23,8 @@
         </article>
     </section>
         {% endfor %}
+    {% else %}
+    <h2>No hay noticias</h2>
+    {% endif %}
 </body>
 </html>

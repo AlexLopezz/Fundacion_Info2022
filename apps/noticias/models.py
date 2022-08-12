@@ -15,8 +15,16 @@ class Noticia(models.Model):
     fechaCreacion = models.DateField(auto_now_add=True)
     contenido = models.TextField()
     imagen = models.ImageField(upload_to= 'noticias', null=True, blank = True)
+<<<<<<< HEAD
+    categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE, null=True, blank= True)
+=======
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE, null=True)
+>>>>>>> 7192abdf4dd42b22baf3a2f60f6e68e5161dab6d
 
     def __str__(self) -> str:
         return self.titulo
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7192abdf4dd42b22baf3a2f60f6e68e5161dab6d
