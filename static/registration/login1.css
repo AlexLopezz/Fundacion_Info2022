@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 body{
     background-image: url('/static/img/fondo.jpg');
@@ -10,16 +11,17 @@ body{
     background-size: 100% 100%;
     background-attachment: fixed;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-form {
-    background-image: url('/static/img/asd.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
+.form {
+    width: 100%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 10px #bce082;
     display: inline-block;
-    margin: 1rem;
+    margin-top: 5.5rem;
     padding: 1rem;
     width: 30%;
 }
@@ -35,6 +37,7 @@ img{
 input{
     width: 90%;
     padding: 10px;
+    margin-top: 5px;
 }
 label{
     font-size: 150%;
