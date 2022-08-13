@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+<title>Iniciar Sesion</title>
+<link rel="stylesheet" href="{% static 'registration/login1.css' %}">
+{% endblock title %}
+
 
 {% block title %}
 <title>Iniciar Sesion</title>
@@ -7,6 +12,10 @@
 {% endblock title %}
 
 {% block contenido %}
+
+{% block contenido %}
+<div class="container">
+
     <div class="form"><form action="" method="post">
         {% csrf_token %}
         <img class="" src="/static/img/logo.png" alt="">
@@ -15,4 +24,6 @@
 
         <button type="submit">Iniciar sesión</button>
     </form></div>
+
+</div>
 {% endblock contenido %}
