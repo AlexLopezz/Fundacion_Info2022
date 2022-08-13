@@ -16,15 +16,16 @@ body{
     align-items: center;
 }
 .form {
-    width: 100%;
+    width: 25%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 10px #bce082;
     display: inline-block;
-    margin-top: 5.5rem;
+    margin-top: 3.5rem;
     padding: 1rem;
-    width: 30%;
 }
+
+
 
 p{
     margin: 1rem;
@@ -32,7 +33,7 @@ p{
 }
 
 img{
-    max-width: 90%;
+    max-width: 60%;
 }
 input{
     width: 90%;
@@ -40,7 +41,7 @@ input{
     margin-top: 5px;
 }
 label{
-    font-size: 150%;
+    font-size: 100%;
 }
 button{
     margin: 15px;
