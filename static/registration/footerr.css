@@ -1,0 +1,63 @@
+footer{
+    height: 9rem;
+    width: 100%;
+    background-color: #ccc;
+    position:  absolute;
+    bottom: 0;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    height: inherit;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 15px 0px;
+}
+
+.pie-pagina .grupo-1 .box{
+    height: 100px;
+}
+
+.pie-pagina .grupo-1 .box .imagen{
+    width: 100px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    margin-bottom: 5px;
+    font-size: 1rem;
+    padding: 2px;
+}
+
+.pie-pagina .grupo-1 .box p{
+    padding: 2px;
+
+}
+
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 20px;
+    list-style-type: none;
+}
+.pie-pagina .grupo-2{
+    padding: 7px 10px;
+    text-align: center;
+    background-color: #565555;
+}
+.fb-btn{
+    max-width: 2rem;
+}
+.ig-btn{
+    max-width: 2rem;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
