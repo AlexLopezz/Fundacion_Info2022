@@ -1,28 +1,23 @@
-{% load static %}
-{% block title %}
-<title>Noticias</title>
-{% endblock title %}
-
-{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seccion de noticias</title>
+</head>
 <body>
-    {% if noticias %}
-    <section>
-        {% for n in noticias %}
-        <article>
-            <h2> {{ n.titulo }} </h2>
-            <footer> Categoria: {{ n.categoria }} - Fecha de creacion: {{ n.fechaCreacion }}</footer>
-            <p> {{ n.contenido }}</p>
-            <img src="{{ n.imagen.url }}">
-            {% if n.autor %}
-            <footer> Autor: {{ n.autor }} </footer>
-            {% else %}
-            <footer> Autor: Anonimo</footer>
-            {% endif %}     
-        </article>
-    </section>
-        {% endfor %}
+    {% if object_list %}
+        {% for noticia in object_list %}
+            <li>
+                {% if noticia.imagen %}
+                <img src="{{ noticia.imagen.url }}">
+                {% endif %}
+                <h3>{{noticia.titulo}}</h3>
+                <footer> Por {{noticia.autor}}</footer>
+            </li>
     {% else %}
     <h2>No hay noticias</h2>
     {% endif %}
 </body>
-{% endblock contenido %}
+</html>
