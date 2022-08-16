@@ -14,7 +14,11 @@
                 <img src="{{ noticia.imagen.url }}">
                 {% endif %}
                 <h3>{{noticia.titulo}}</h3>
+                {%if autor %}
                 <footer> Por {{noticia.autor}}</footer>
+                {%else%}
+                <footer> Por Anonimo </footer>
+                {% endif %}
                 <a href="{% url 'articulo' noticia.pk %}">Leer mas...</a>
             </li>
         {% endfor %}
