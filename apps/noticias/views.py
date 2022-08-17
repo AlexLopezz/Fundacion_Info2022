@@ -1,11 +1,18 @@
 from django.shortcuts import render
-from apps.noticias.models import Noticia 
+from apps.noticias.models import Categoria, Noticia 
 from django.views.generic import ListView, DetailView
 # Create your views here.
 
 class noticias(ListView):
     model = Noticia
     template_name = 'noticias/seccion_noticias.html'
+    
+    def get_context_data(self, *args, **kwargs):
+        categoria_menu = Categoria.objects.all()
+        ctx = super(noticias, self).get_context_data(*args, **kwargs)
+
+        ctx['categoria'] = categoria_menu
+        return ctx
 
 class articulo(DetailView):
     model = Noticia
