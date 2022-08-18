@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render
 from apps.noticias.models import Categoria, Noticia 
 from django.views.generic import ListView, DetailView
@@ -17,3 +18,10 @@ class noticias(ListView):
 class articulo(DetailView):
     model = Noticia
     template_name = 'noticias/articulo.html'
+
+def categoria(request, cat):
+    cat_object = Categoria.objects.get(pk=cat)
+    noticias_categoria = Noticia.objects.filter(categoria= cat)
+    return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
+    
+    

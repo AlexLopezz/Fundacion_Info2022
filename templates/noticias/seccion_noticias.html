@@ -40,7 +40,7 @@
                         {% if categoria %}
                             {% for  cat in categoria %}
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{{ cat.nombre }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categoria' cat %}">{{ cat.nombre }}</a></li>
                         </ul>
                             {% endfor %}
                         {% endif %}
