@@ -27,11 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-=======
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
->>>>>>> Jorge
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Eventos</a>
@@ -41,35 +37,19 @@
                             aria-expanded="false">
                             Categorias
                         </a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                        {% if categoria %}
-                            {% for  cat in categoria %}
->>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
+                    {% if categoria %}
+                        {% for  cat in categoria %}
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'categoria' cat.pk %}">{{ cat.nombre }} - {{ cat.pk }}</a></li>
                         </ul>
-<<<<<<< HEAD
-=======
-                        {% if categoria %}
-                            {% for  cat in categoria %}
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'categoria' cat %}">{{ cat.nombre }}</a></li>
-                        </ul>
-                            {% endfor %}
-                        {% endif %}
+                        {% endfor %}
+                    {% endif %}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'mision' %}">Mision</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'somos' %}">Quienes Somos</a>
->>>>>>> Jorge
-=======
-                            {% endfor %}
-                        {% endif %}
->>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -97,14 +77,6 @@
         <h2>No hay noticias</h2>
         {% endif %}
     </section>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> Jorge
-=======
-    
->>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
 </body>
 
 </html>
