@@ -42,14 +42,15 @@
                             Categorias
                         </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                        {% if categoria %}
+                            {% for  cat in categoria %}
+>>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Categoria 1</a></li>
-                            <li><a class="dropdown-item" href="#">Categoria 2</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Categoria 3</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categoria' cat %}">{{ cat.nombre }}</a></li>
                         </ul>
+<<<<<<< HEAD
 =======
                         {% if categoria %}
                             {% for  cat in categoria %}
@@ -65,6 +66,10 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'somos' %}">Quienes Somos</a>
 >>>>>>> Jorge
+=======
+                            {% endfor %}
+                        {% endif %}
+>>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -93,9 +98,13 @@
         {% endif %}
     </section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> Jorge
+=======
+    
+>>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
 </body>
 
 </html>
