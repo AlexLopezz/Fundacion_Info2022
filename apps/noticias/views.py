@@ -38,6 +38,9 @@ class articulo(DetailView):
         ctx['categoria'] = categoria_menu
         return ctx
 
+def mision(request):
+    return render(request, 'noticias/mision.html')
+
 class articulo(DetailView):
     model = Noticia
     template_name = 'noticias/articulo.html'
