@@ -30,7 +30,7 @@ class articulo(DetailView):
 class articulo(DetailView):
     model = Noticia
     template_name = 'noticias/articulo.html'
-   
+
     def get_context_data(self, *args, **kwargs):
         categoria_menu = Categoria.objects.all()
         ctx = super(noticias, self).get_context_data(*args, **kwargs)
@@ -47,16 +47,4 @@ def categoria(request, cat):
     noticias_categoria = Noticia.objects.filter(categoria= cat)
     return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
-def mision(request):
-    return render(request, 'noticias/mision.html')
 
-def somos(request):
-    return render(request, 'noticias/somos.html')   
-    
-  
-    
-
-  
-
-
-    
