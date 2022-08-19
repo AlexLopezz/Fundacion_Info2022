@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.shortcuts import render
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,6 +16,7 @@ class noticias(ListView):
     template_name = 'noticias/seccion_noticias.html'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
     def get_context_data(self, *args, **kwargs):
@@ -32,7 +32,22 @@ class articulo(DetailView):
     template_name = 'noticias/articulo.html'
 <<<<<<< HEAD
 =======
+=======
+
+>>>>>>> alex
     
+    def get_context_data(self, *args, **kwargs):
+        categoria_menu = Categoria.objects.all()
+        ctx = super(noticias, self).get_context_data(*args, **kwargs)
+
+        ctx['categoria'] = categoria_menu
+        return ctx
+
+
+class articulo(DetailView):
+    model = Noticia
+    template_name = 'noticias/articulo.html'
+   
     def get_context_data(self, *args, **kwargs):
         categoria_menu = Categoria.objects.all()
         ctx = super(noticias, self).get_context_data(*args, **kwargs)
@@ -51,10 +66,15 @@ def categoria(request, cat):
     noticias_categoria = Noticia.objects.filter(categoria= cat)
     return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> alex
 
 def mision(request):
     return render(request, 'noticias/mision.html')
 
+<<<<<<< HEAD
 def somos(request):
     return render(request, 'noticias/somos.html')   
     
@@ -63,3 +83,11 @@ def somos(request):
     
     
 >>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
+=======
+    
+
+
+    
+    
+
+>>>>>>> alex

@@ -48,7 +48,7 @@
                             {% for  cat in categoria %}
 >>>>>>> 70dda3e4ca0ff21c9524a9a5e8993a7a407678a4
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'categoria' cat %}">{{ cat.nombre }}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categoria' cat.pk %}">{{ cat.nombre }} - {{ cat.pk }}</a></li>
                         </ul>
 <<<<<<< HEAD
 =======
