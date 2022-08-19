@@ -60,6 +60,3 @@ def somos(request):
 
 
     
-    
-
->>>>>>> alex
