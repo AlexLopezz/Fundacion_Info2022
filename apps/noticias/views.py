@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from apps.noticias.models import Noticia 
-from apps.noticias.models import Categoria, Noticia 
 from apps.noticias.models import Categoria, Noticia 
 from django.views.generic import ListView, DetailView
 # Create your views here.
