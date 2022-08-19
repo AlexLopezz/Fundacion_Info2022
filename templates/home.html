@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
+<link rel="stylesheet" href="{% static 'main.css'%}">
 <title>BOTELLAS DE AMOR</title> 
 {% endblock title %}
 
@@ -18,6 +19,12 @@
             <li>
                 <a href="{% url 'logout' %}">Cerrar Sesion</a>
             </li>
+            <li>
+                <a href="{% url 'noticias' %}">Noticias</a>
+            </li>
+            <li>
+                <a href="{% url 'mision' %}">Mision</a>
+            </li>
             {% else %}
             <li>
                 <a href="{% url 'login' %}">Iniciar Sesión</a>
@@ -26,10 +33,25 @@
                 <a href="{% url 'registro' %}">Registrarse</a>
             </li>
             {% endif %}
-            <a href="#text">ir al texto</a>
         </ul>
     </nav>
 
-    <p id="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, molestiae. Eligendi quas esse, fugiat incidunt vel ullam reiciendis nam quidem modi, commodi, pariatur quaerat fugit deserunt? Eum doloribus delectus fuga.</p>
-
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="{% static 'img/slider_1.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_2.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_3.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_4.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_5.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_6.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_7.png' %}" alt="botellasdeamor"></li>
+        </ul>
+    </div>
 {% endblock contenido %}
