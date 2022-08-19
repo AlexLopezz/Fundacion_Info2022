@@ -11,7 +11,9 @@
 
 
         <ul>
-            
+            <li>
+                <a href="{% url 'mision' %}">Mision</a>
+            </li>
             {% if user.is_authenticated %}
             <li>
                 <a href="#">Usuario: {{ user.username }}</a>
@@ -22,12 +24,6 @@
             <li>
                 <a href="{% url 'noticias' %}">Noticias</a>
             </li>
-<<<<<<< HEAD
-=======
-            <li>
-                <a href="{% url 'mision' %}">Mision</a>
-            </li>
->>>>>>> Jorge
             {% else %}
             <li>
                 <a href="{% url 'login' %}">Iniciar Sesión</a>
@@ -36,6 +32,7 @@
                 <a href="{% url 'registro' %}">Registrarse</a>
             </li>
             {% endif %}
+            
         </ul>
     </nav>
 
