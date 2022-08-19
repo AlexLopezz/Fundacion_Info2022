@@ -19,7 +19,18 @@
             {%else%}
             <footer> Escrito por: Anonimo. </footer>
             {% endif %}
-        
+        <section>
+            <h3>Comentarios...</h3>
+            {% if not noticia.comentario.all %}
+            <p> No se encontraron comentarios.</p>
+            {% else %}
+                {% for com in noticia.comentario.all %}
+                <strong>{{ com.nombre }} - {{ com.fecha_de_comentario}}: </strong>
+                {{ com.contenido }}
+                {% endfor %}
+            {% endif %}
+            </br>
+
         </section>        
 </body>
 </html>
