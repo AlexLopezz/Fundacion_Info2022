@@ -21,18 +21,20 @@
             {% endif %}
         <section>
             <h3>Comentarios...</h3>
-            {% if not noticia.comentario.all %}
-            <p> No se encontraron comentarios.</p>
-            {% else %}
-                {% for com in noticia.comentario.all %}
-                <strong>{{ com.nombre }} - {{ com.fecha_de_comentario}}: </strong>
-                </br>
-                {{ com.contenido }}
-                </br></br>
-                {% endfor %}
-            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                {{ formComentario.as_p }}
+                <input type="submit" value="Comentar">
+            </form>
+            {% if comentarios %}
+            <p>Comentarios({{ comentarios.count }})</p>
+            {% for c in comentarios %}
+              <strong>{{ c.nombre }} - {{ c.fecha_de_comentario }}:</strong>
+              <p>{{ c.contenido }}</p>
+            {% endfor %}
             </br>
-
+            {%endif%}
+            
         </section>        
 </body>
 </html>

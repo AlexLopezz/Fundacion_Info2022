@@ -57,16 +57,16 @@
         </div>
     </nav>
     <section>
-        {% if object_list %}
-        {% for noticia in object_list %}
+        {% if noticias %}
+        {% for n in noticias %}
         <li class="card" >
             <div class="card-body">
-                {% if noticia.imagen %}
-                <img class="card-img-top" src="{{ noticia.imagen.url }}">
+                {% if n.imagen %}
+                <img class="card-img-top" src="{{ n.imagen.url }}">
                 {% endif %}
-                <h3 class="card-title">{{noticia.titulo}}</h3>
-                <p class="description"> {{noticia.descripciones}}</p>
-                <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' noticia.pk %}">Leer mas...</a>
+                <h3 class="card-title">{{n.titulo}}</h3>
+                <p class="description"> {{n.descripciones}}</p>
+                <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' n.pk %}">Leer mas...</a>
             </div>
         </li>
         {% endfor %}
