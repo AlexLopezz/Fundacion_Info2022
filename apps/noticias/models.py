@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
@@ -24,10 +24,10 @@ class Noticia(models.Model):
         return self.titulo
 
 class Comentario(models.Model):
-    Noticia_Comentario = models.ForeignKey(Noticia, related_name="comentario",on_delete=models.CASCADE)
-    nombre = models.CharField(max_length=50)
+    noticia_Comentario = models.ForeignKey(Noticia, related_name="comentario",on_delete=models.CASCADE)
+    nombre = models.ForeignKey(User, on_delete=models.CASCADE)
     contenido = models.TextField()
     fecha_de_comentario = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.nombre
+        return self.nombre.username

@@ -1,49 +1,44 @@
 from django.shortcuts import render
-from apps.noticias.models import Categoria, Noticia 
-from django.views.generic import ListView, DetailView
+from apps.noticias.models import Categoria, Comentario, Noticia 
+from django.contrib.auth import get_user_model
+from .forms import FormComentario
 # Create your views here.
 
-class noticias(ListView):
-    model = Noticia
-    template_name = 'noticias/seccion_noticias.html'
+User = get_user_model()
+
+def noticias(request):
+    todasNoticas = Noticia.objects.all()
+    todasCategorias = Categoria.objects.all()
+    ctx={
+        'noticias': todasNoticas,
+        'categorias': todasCategorias,
+    }
+    return render(request, 'noticias/seccion_noticias.html', ctx)
+
+def articulo(request, art):
+    articuloSeleccionado = Noticia.objects.get(pk=art) #Aqui obtengo el objeto articuloSeleccionado.
+    comentarios = Comentario.objects.filter(noticia_Comentario_id=art)
     
-    def get_context_data(self, *args, **kwargs):
-        categoria_menu = Categoria.objects.all()
-        ctx = super(noticias, self).get_context_data(*args, **kwargs)
+    if request.method == 'POST':
+        formComentario = FormComentario(request.POST)
+        if formComentario.is_valid():
+            contenido= request.POST.get('contenido')
+            comentario= Comentario.objects.create(noticia_Comentario_id=art, nombre=request.user, contenido=contenido)
+            comentario.save()
+    else:
+        formComentario= FormComentario()
 
-        ctx['categoria'] = categoria_menu
-        return ctx
-
-
-class articulo(DetailView):
-    model = Noticia
-    template_name = 'noticias/articulo.html'
-    
-    def get_context_data(self, *args, **kwargs):
-        categoria_menu = Categoria.objects.all()
-        ctx = super(noticias, self).get_context_data(*args, **kwargs)
-
-        ctx['categoria'] = categoria_menu
-        return ctx
+    ctx={
+        'noticia': articuloSeleccionado,
+        'comentarios': comentarios,
+        'formComentario': formComentario,
+    }
+    return render(request, 'noticias/articulo.html', ctx)
 
 
-class articulo(DetailView):
-    model = Noticia
-    template_name = 'noticias/articulo.html'
-
-    def get_context_data(self, *args, **kwargs):
-        categoria_menu = Categoria.objects.all()
-        ctx = super(noticias, self).get_context_data(*args, **kwargs)
-
-        ctx['categoria'] = categoria_menu
-        return ctx
 
 def mision(request):
     return render(request, 'noticias/mision.html')
-
-class articulo(DetailView):
-    model = Noticia
-    template_name = 'noticias/articulo.html'
 
 def categoria(request, cat):
     cat_object = Categoria.objects.get(pk=cat)
