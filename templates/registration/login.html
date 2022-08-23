@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}
 <title>Iniciar Sesion</title>
-<link rel="stylesheet" href="{% static 'registration/login1.css' %}">
+<link rel="stylesheet" href="{% static 'registration/login.css' %}">
 {% endblock title %}
 
 
@@ -17,8 +17,9 @@
         
         {{ form.as_p }}
 
+        <p>¿No tienes una cuenta?
+        <a class="link" href="{% url 'registro' %}">Registrarse</a></p>
         <button type="submit">Iniciar sesión</button>
-        <a href="/">Volver al inicio</a>
     </form></div>
 
 </div>
