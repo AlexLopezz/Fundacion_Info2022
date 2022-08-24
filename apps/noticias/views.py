@@ -37,8 +37,8 @@ def articulo(request, art):
 
 
 
-def mision(request):
-    return render(request, 'noticias/mision.html')
+def sobre_nosotros(request):
+    return render(request, 'noticias/sobre-nosotros.html')
 
 def categoria(request, cat):
     cat_object = Categoria.objects.get(pk=cat)
