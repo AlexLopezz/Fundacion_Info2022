@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="{% static 'noticias/mision.css' %}">
-</head>
-
+    <link rel="stylesheet" href="{% static 'noticias/misionn.css' %}">
+    </head>
 <body>
+    <nav>
+        <a  href="{% url 'home' %}">Home</a>
+    </nav>
     <div class="container">
         <div class="sobre-nosotros">
             <h1>Sobre nosotros</h1>
@@ -37,7 +39,7 @@
             <ul>
                 <li>En una botella de plástico se colocan plásticos de un solo uso, cuidando que estén limpios y secos, y compactando para que entre la mayor cantidad posible.</li>
                 <li>Se llevan las botellas completas a un punto de acopio</li>
-                <li>Se envían a Ecoqiru, para ser procesadas y transformadas en madera plástica y luego en muebles y juegos de niños. </li>
+                <li>Se envían a <span> Ecoqiru </span>, para ser procesadas y transformadas en madera plástica y luego en muebles y juegos de niños. </li>
                 <li>Nos regresan un porcentaje de lo enviado en muebles y juegos de niños que serán donados a instituciones que lo necesiten en nuestra comunidad. </li>
             </ul>
         </div>
@@ -46,13 +48,22 @@
         <div class="box">
             <h3>INTEGRANTES</h3>
             <div class="container-integrantes">
+            <div class="img-descripcion">
+
                 <img src="{% static 'img/CeciliaGilDeMuro.jpeg' %}" alt="">
                 <p>Cecilia Gil De Muro</p>
-                <img src="{% static 'img/CelesteLestani.jpeg' %}" alt="">
+            </div>
+            <div class="img-descripcion">
+                    <img src="{% static 'img/CelesteLestani.jpeg' %}" alt="">
                 <p>Celeste Lestani</p>
+            </div>
+            <div class="img-descripcion">
                 <img src="{% static 'img/MaiteGilDeMuro.jpeg' %}" alt="">
                 <p>Maite Gil De Muro</p>
-                <img src="{% static 'img/RocioBlotta.jpeg' %}" alt="">
+            </div>
+                
+            <div class="img-descripcion">
+                    <img src="{% static 'img/RocioBlotta.jpeg' %}" alt="">
                 <p>Rocio Blotta</p>
             </div>
         </div>
