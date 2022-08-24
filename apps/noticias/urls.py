@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import noticias, articulo, categoria, mision
+from .views import noticias, articulo, categoria, sobre_nosotros
 
 
 urlpatterns = [
     path('noticias/', noticias, name='noticias'),
     path('articulo/<int:art>',articulo, name= 'articulo'),
-    path('mision/', mision, name= 'mision'),
+    path('sobre-nosotros/', sobre_nosotros, name= 'sobre nosotros'),
     path('categoria/<int:cat>', categoria, name ='categoria'),
 ]

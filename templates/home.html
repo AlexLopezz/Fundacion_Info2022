@@ -11,11 +11,9 @@
 
         <ul>
             <li>
-                <a href="{% url 'somos' %}">Quienes somos</a>
+                <a href="{% url 'sobre nosotros' %}">Sobre Nosotros</a>
             </li>
-            <li>
-                <a href="{% url 'mision' %}">Mision</a>
-            </li>
+
             {% if user.is_authenticated %}
             <li>
                 <a href="#">Usuario: {{ user.username }}</a>
