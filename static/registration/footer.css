@@ -44,6 +44,7 @@ footer{
     padding: 5px;
 }
 
+
 .pie-pagina .grupo-1 .box p i:hover {
     color: darkblue;
 }
@@ -56,13 +57,23 @@ footer{
     margin: 10px;
 }
 
-.pie-pagina .grupo-1 .red-social a  .fa-facebook:hover {
+.pie-pagina .grupo-1 .red-social a  .fa-facebook{
     color: blue;
     transition: all 0.1s;
 }
 
-.pie-pagina .grupo-1 .red-social a  .fa-instagram:hover {
+
+.pie-pagina .grupo-1 .red-social a  .fa-facebook:hover {
+    color: #656565;
+    transition: all 0.1s;
+}
+
+.pie-pagina .grupo-1 .red-social a  .fa-instagram {
     color: deeppink;
+    transition: all 0.1s;
+}
+.pie-pagina .grupo-1 .red-social a  .fa-instagram:hover {
+    color: #656565;
     transition: all 0.1s;
 }
 .pie-pagina .grupo-2{
@@ -80,4 +91,13 @@ footer{
         grid-gap: 30px;
         padding: 35px 0px;
     }
+}
+
+a{
+    font-size: 13px;
+    color: #43A03B;
+}
+
+a:hover {
+    color: #4A7C33;
 }
