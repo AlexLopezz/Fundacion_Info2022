@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +22,14 @@
             {% endif %}
         <section>
             <h3>Comentarios...</h3>
-            <form method="post">
+            <form id="formulario" method="post">
                 {% csrf_token %}
                 {{ formComentario.as_p }}
-                <input type="submit" value="Comentar">
+                <input type="submit" required="" value="Comentar">
+                <button type="submit" onclick="validate();">Borrar todo</button>
+                
             </form>
+            <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
             {% if comentarios %}
             <p>Comentarios({{ comentarios.count }})</p>
             {% for c in comentarios %}

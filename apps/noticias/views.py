@@ -8,10 +8,10 @@ from .forms import FormComentario
 User = get_user_model()
 
 def noticias(request):
-    todasNoticas = Noticia.objects.all()
-    todasCategorias = Categoria.objects.all()
+    todasNoticas = Noticia.objects.all() #Devuelve una lista.
+    todasCategorias = Categoria.objects.all() #Devuelve una lista.
     ctx={
-        'noticias': todasNoticas,
+        'noticias': todasNoticas, 
         'categorias': todasCategorias,
     }
     return render(request, 'noticias/seccion_noticias.html', ctx)
@@ -24,8 +24,7 @@ def articulo(request, art):
         formComentario = FormComentario(request.POST)
         if formComentario.is_valid():
             contenido= request.POST.get('contenido')
-            comentario= Comentario.objects.create(noticia_Comentario_id=art, nombre=request.user, contenido=contenido)
-            comentario.save()
+            Comentario.objects.create(noticia_Comentario_id=art, nombre=request.user, contenido=contenido)
     else:
         formComentario= FormComentario()
 
@@ -35,11 +34,6 @@ def articulo(request, art):
         'formComentario': formComentario,
     }
     return render(request, 'noticias/articulo.html', ctx)
-
-
-
-def sobre_nosotros(request):
-    return render(request, 'noticias/sobre-nosotros.html')
 
 def categoria(request, cat):
     cat_object = Categoria.objects.get(pk=cat)
