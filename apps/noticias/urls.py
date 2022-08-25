@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import noticias, articulo, categoria, mision
+from .views import noticias, articulo, categoria, mision, buscarNoticias
 
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('articulo/<int:art>',articulo, name= 'articulo'),
     path('mision/', mision, name= 'mision'),
     path('categoria/<int:cat>', categoria, name ='categoria'),
+    path('noticias/', buscarNoticias, name='buscarNoticias'),
 ]
