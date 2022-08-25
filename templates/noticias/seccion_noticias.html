@@ -32,13 +32,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Eventos</a>
                     </li>
-                    {% if categoria %}
+                    {% if categorias %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Categorias
                         </a>
-                        {% for  cat in categoria %}
+                        {% for  cat in categorias %}
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'categoria' cat.pk %}">{{ cat.nombre }} </a></li>
                         </ul>
@@ -65,7 +65,7 @@
                 <img class="card-img-top" src="{{ n.imagen.url }}">
                 {% endif %}
                 <h3 class="card-title">{{n.titulo}}</h3>
-                <p class="description"> {{n.descripciones}}</p>
+                <p class="description"> {{n.contenido|slice:500}}...</p>
                 <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' n.pk %}">Leer mas...</a>
             </div>
         </li>
