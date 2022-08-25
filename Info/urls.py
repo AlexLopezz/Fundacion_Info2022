@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home, mision, somos
+from .views import home, sobre_nosotros
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +25,5 @@ urlpatterns = [
     path('accounts/', include('apps.usuarios.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),
     path('seccion/',include('apps.noticias.urls')),
-    path('mision/', mision, name = 'mision'),
-    path('somos/', somos, name = 'somos'),
+    path('sobre-nosotros/', sobre_nosotros, name = 'sobre nosotros'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
