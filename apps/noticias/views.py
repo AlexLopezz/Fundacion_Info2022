@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
+from django.views.generic import DetailView
 from apps.noticias.models import Categoria, Comentario, Noticia 
 from django.contrib.auth import get_user_model
 from .forms import FormComentario
@@ -55,3 +56,8 @@ def buscarNoticias(request):
         ).distinct()
 
     return render(request, 'noticias/seccion_noticias.html', {'noticias': noticias})
+
+
+
+def eventos(request):
+    return render(request, 'eventos/eventos.html')
