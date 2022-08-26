@@ -2,18 +2,25 @@
 {% load static %}
 {% block title %}
 <title>Iniciar Sesion</title>
-<link rel="stylesheet" href="{% static 'registration/login1.css' %}">
+<link rel="stylesheet" href="{% static 'registration/login.css' %}">
 {% endblock title %}
+
+
+
 
 {% block contenido %}
 <div class="container">
+
     <div class="form"><form action="" method="post">
         {% csrf_token %}
-        <img class="" src="/static/img/logo.png" alt="">
+        <img class="img" src="/static/img/logo.png" alt="">
         
         {{ form.as_p }}
 
+        <p>¿No tienes una cuenta?
+        <a class="link" href="{% url 'registro' %}">Registrarse</a></p>
         <button type="submit">Iniciar sesión</button>
     </form></div>
+
 </div>
 {% endblock contenido %}

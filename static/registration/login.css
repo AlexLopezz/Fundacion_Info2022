@@ -5,7 +5,7 @@
     font-family: 'Raleway', sans-serif;
 }
 body{
-    background-image: url('/static/img/fondo.jpg');
+    background-color: #C6E377;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -18,33 +18,35 @@ body{
     justify-content: center;
 }
 
-form {
-    width: 55%;
+.form {
+
+    width: 25%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 10px #bce082;
     display: inline-block;
-    margin: 2.3rem 0;
-    padding: 1rem;
+    margin: 2.80rem;
 }
 
 
 
-img{
-    max-width: 60%;
+.img{
+    max-width: 45%;
 }
+
 input{
-    width: 90%;
+    width: 75%;
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 7px;
+    margin: 10px;
+    border-radius: 5px;
+    outline:none;
 }
 label{
     font-size: 100%;
 }
 button{
-    margin: 15px;
-    padding: 13px;
+    margin: 10px 0;
+    padding: 10px;
     text-decoration: none;
     background-color: #84d600;
     color: white;
@@ -53,4 +55,30 @@ button{
     font-size: 18px;
     font-weight: 600;
     border-color: transparent;
+    cursor:pointer;
+}
+
+button:hover {
+    background-color: #619a07;
+    transition: all 0.4s;
+}
+button:hover {
+    background-color:#4C8034;
+    transition: all 0.4s;
+}
+p{
+    text-align: center;
+    padding bottom: 20px;
+}
+a {
+
+    text-decoration: none;
+    font-weight: 600;
+    color:#5BE21B;
+    padding bottom: 20px;
+
+
+}
+a:hover {
+    color:#439B1B;
 }

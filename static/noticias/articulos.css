@@ -1,0 +1,73 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+body {
+    background-image: url('/static/img/fondo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+section{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+section h1{
+	margin: 25px;
+	font-size: 45px;
+	color: green;
+}
+
+section img{
+	width: 35%;
+
+}
+
+section .contenido {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin: 25px 5px;
+}
+
+section .comentarios{
+	width: 100%;
+
+}
+
+section .comentarios h3{
+	margin: 15px 0 15px 75px;
+	font-size: 25px;
+	text-align: left;
+
+}
+
+section .comentarios .form{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+section .comentarios .form .botones{
+	text-align: center;
+	margin: 10px;
+}
+
+section .comentarios .form .botones input, button{
+	padding: 15px;
+	margin-left: 20px;
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 20px;
+}

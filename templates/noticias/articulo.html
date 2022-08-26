@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ noticia.titulo }} </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'noticias/articulos.css' %}">
+</head>
+<body>
+    <section>
+        <h1> {{ noticia.titulo }} </h1>
+            <small>Fecha de publicacion: {{ noticia.fechaCreacion }} </small>
+            <img src="{{ noticia.imagen.url }}">
+            <div class="contenido">
+               <p> {{ noticia.contenido }} </p>
+            </div> 
+            {% if noticia.autor %}
+            <footer> Escrito por: {{ noticia.autor }}. </footer>
+            {%else%}
+            <footer> Escrito por: Anonimo. </footer>
+            {% endif %}
+            
+            <div class="comentarios">
+                
+                <h3>Comentarios...</h3>
+                <div class="form">
+                     <form id="formulario" method="post">
+                    {% csrf_token %}
+                    {{ formComentario.as_p }}
+                    <div class="botones">
+                        <input type="submit" required="" value="Comentar">
+                        <button type="submit" onclick="validate();">Borrar todo</button>
+                    </div>
+                    </form>  
+                </div>
+             
+            {% if comentarios %}
+            <p>Comentarios({{ comentarios.count }})</p>
+            {% for c in comentarios %}
+              <strong>{{ c.nombre }} - {{ c.fecha_de_comentario }}:</strong>
+              <p>{{ c.contenido }}</p>
+            {% endfor %}
+            </br>
+            {%endif%} 
+            </div>        
+        </section> 
+        <script type="text/javascript" src="{% static 'js/index.js' %}"></script>       
+</body>
+</html>

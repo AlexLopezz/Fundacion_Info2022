@@ -1,0 +1,157 @@
+*
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+nav{
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #7dc40be4;
+    display: flex;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin: 10px 10px;
+    font-size: 20px;
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    padding: 25px;
+}
+
+body{
+    background-image: url('/static/img/fondo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.sobre-nosotros{
+    text-align: center;
+    margin: 5px;  
+}
+
+.sobre-nosotros h1{
+    padding: 15px;
+    font-size: 50px;
+    color: rgb(1, 122, 42);
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+
+.sobre-nosotros p{
+    padding: 15px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 1px rgb(214, 214, 214);
+}
+.container-mision{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.objetivo{
+    width: 45%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)), url('/static/img/fondo-objetivo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: inherit;
+    color: white;
+    padding: 45px;
+    text-align: center;
+    border-radius: 25px;
+}
+.objetivo p{
+    padding: 15px;
+    font-size: 18px;
+    text-shadow: 0 0 1px whitesmoke;
+}
+.que-hacemos{
+    width: 45%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0,0,0,0.6)), url('/static/img/fondo-quehacemos.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: inherit;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 25px;
+}
+.que-hacemos p{
+    padding: 15px;
+    font-size: 18px;
+    text-shadow: 0 0 1px whitesmoke;
+}
+
+.container-integrantes{
+    display: flex;
+    width: 100%;
+}
+
+.img-descripcion img{
+    width: 250px;
+    border-radius: 100%;
+    height: 260px;
+    object-fit: cover;
+    border: 4px solid rgb(104, 197, 119);
+    margin: 30px;
+}
+.img-descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.box{
+    margin: 35px;
+    text-align: center;
+}
+
+.box h3{
+    margin: 35px;
+    font-size: 30px;
+}
+
+.como-funciona h2{
+    text-align: center;
+    padding: 25px;
+    font-size: 50px;
+    color: #2e6907;
+    text-shadow: 0 0 1px whitesmoke;
+}
+.como-funciona ul{
+    padding: 25px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+text-shadow: 0 0 1px rgb(58, 57, 57);
+}
+.como-funciona ul li span{
+    color: blueviolet;
+}
+.como-funciona {
+    padding-block: 30px;
+}
+.box p{
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    color: hsl(120, 11%, 2%);
+    text-shadow: 0 0 1px hsl(0, 0%, 0%);
+}
