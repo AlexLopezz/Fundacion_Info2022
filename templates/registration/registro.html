@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Registrarse</title>
+<link rel="stylesheet" href="{% static 'registration/registro1.css' %}">
+{% endblock title %}
+
+{% block contenido %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <img class="img" src="/static/img/logo.png" alt="">
+    <div id="div_id_username" class="form-group">
+        <i class="fa-solid fa-user icon"></i><label for="id_username" class=" requiredField"> Nombre de usuario<span class="asteriskField"> </span> </label>
+        <div>
+            <input type="text" name="username" maxlength="150" autofocus="" class="textinput textInput form-control"
+                required="" id="id_username">
+        </div>
+    </div>
+    <div id="div_id_email" class="form-group">
+        <i class="fa-solid fa-envelope icon"></i><label for="id_email" class=" requiredField"> Email <span class="asteriskField"></span> </label>
+        <div>
+            <input type="email" name="email" class="emailinput form-control" required="" id="id_email">
+        </div>
+    </div>
+    <div id="div_id_password1" class="form-group">
+        <i class="fa-solid fa-key icon"></i><label for="id_password1" class=" requiredField"> Contraseña <span class="asteriskField"></span> </label>
+        <div>
+            <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control"
+                required="" id="id_password1">
+            <small id="hint_id_password1" class="form-text text-muted"> </small>
+        </div>
+    </div>
+    <div id="div_id_password2" class="form-group">
+        <i class="fa-solid fa-key icon"></i><label for="id_password2" class=" requiredField"> Confirmación de contraseña <span
+                class="asteriskField"></span> </label>
+        <div>
+            <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control"
+                required="" id="id_password2">
+        </div>
+    </div>
+     <div class="formul-divs"> 
+        <button type="submit" >REGISTRARSE</button><p class="formul">Se ha registrado con exito</p>
+        <p>¿Ya tienes cuenta?<a class="link" href="{% url 'login' %}">Iniciar sesion</a></p>
+    </div> 
+
+    <a href="/">Volver al inicio</a>
+</form>
+{% endblock contenido %}

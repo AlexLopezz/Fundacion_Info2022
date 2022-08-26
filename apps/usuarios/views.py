@@ -15,3 +15,4 @@ def registroUsuario(request):
     ctx = {'form' : form}
 
     return render(request, 'registration/registro.html', ctx)
+    

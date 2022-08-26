@@ -1,32 +1,28 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block title %}
+<link rel="stylesheet" href="{% static 'main.css'%}">
+<title>BOTELLAS DE AMOR</title> 
+{% endblock title %}
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'main1.css'%}">
-    <title>Home</title>
-
-    <title>Botellitas de Amor</title>
-
-</head>
-<body>
-
+{% block contenido %}
     <nav>
         <img class src="{% static 'img/logo.png'%}" alt="">
 
-
         <ul>
-            
+            <li>
+                <a href="{% url 'sobre nosotros' %}">Sobre Nosotros</a>
+            </li>
+
             {% if user.is_authenticated %}
             <li>
                 <a href="#">Usuario: {{ user.username }}</a>
             </li>
             <li>
                 <a href="{% url 'logout' %}">Cerrar Sesion</a>
+            </li>
+            <li>
+                <a href="{% url 'noticias' %}">Noticias</a>
             </li>
             {% else %}
             <li>
@@ -36,9 +32,26 @@
                 <a href="{% url 'registro' %}">Registrarse</a>
             </li>
             {% endif %}
-            <a href="#text">ir al texto</a>
+            
         </ul>
     </nav>
-    <p id="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, molestiae. Eligendi quas esse, fugiat incidunt vel ullam reiciendis nam quidem modi, commodi, pariatur quaerat fugit deserunt? Eum doloribus delectus fuga.</p>
-</body>
-</html>
+
+    <div class="slider">
+        <ul>
+            <li>
+                <img src="{% static 'img/slider_1.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_2.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_3.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_4.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_5.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_6.png' %}" alt="botellasdeamor"></li>
+            <li>
+                <img src="{% static 'img/slider_7.png' %}" alt="botellasdeamor"></li>
+        </ul>
+    </div>
+{% endblock contenido %}
