@@ -25,6 +25,9 @@ urlpatterns = [
     path('accounts/', include('apps.usuarios.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),
     path('seccion/',include('apps.noticias.urls')),
+<<<<<<< HEAD
     path('eventos/',include('apps.noticias.urls')),
+=======
+>>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
     path('sobre-nosotros/', sobre_nosotros, name = 'sobre nosotros'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
