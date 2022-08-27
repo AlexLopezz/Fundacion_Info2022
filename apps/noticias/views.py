@@ -39,4 +39,9 @@ def categoria(request, cat):
     noticias_categoria = Noticia.objects.filter(categoria= cat)
     return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
+<<<<<<< HEAD
 
+=======
+def eventos(request):
+    return render(request, 'eventos/eventos.html')
+>>>>>>> matias

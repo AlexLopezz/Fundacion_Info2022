@@ -5,38 +5,64 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
+<<<<<<< HEAD
     background-color: #C6E377;  
+=======
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/static/img/fondo-registro-login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed; 
+>>>>>>> matias
     text-align: center;
 }
 form {
     border-radius: 10px;
     background-color: white;
+<<<<<<< HEAD
     box-shadow: 0px 0px 10px #bce082;
     display: inline-block; 
     margin: 1.55rem;
     padding: 1rem;
     width: 25%; 
+=======
+    box-shadow: 0px 0px 5px #bce082;
+    display: inline-block; 
+    margin: 1.55rem;
+    padding: 0.2rem;
+    width: 38%; 
+    height: 600px;
+>>>>>>> matias
 }
 
     
 
 .img{
+<<<<<<< HEAD
     max-width: 30%;
+=======
+    width: 18%;
+>>>>>>> matias
 }
 input{
-    width: 75%;
+    width: 55%;
     padding: 6px;
-    margin: 6px 0;
+    margin: 8px 0;
     border-radius: 7px;
     outline: none;
 
 }
 label{
-    font-size: 80%;
+    font-size: 15px;
+    margin: 3px;
 }
 button{
     margin: 15px;
+<<<<<<< HEAD
     padding: 20px;
+=======
+    padding: 15px;
+>>>>>>> matias
     text-decoration: none;
     background-color: #84d600;
     color: white;
@@ -61,6 +87,7 @@ a {
 a:hover {
     color:#439B1B;
 }
+<<<<<<< HEAD
 
 .formul {
     font-size: 14px;
@@ -73,4 +100,40 @@ a:hover {
     display: block;
     color: red;
 }
+=======
+>>>>>>> matias
 
+.formul {
+    font-size: 14px;
+    color: #84d600;
+    display: none;
+    padding: 5px;
+    text-align: center;
+}
+.form-text {
+    font-size:10px;
+    margin: 7px;
+}
+.formul:active {
+    display: block;
+    color: red;
+}
+.form-group {
+    margin-top:7px;
+}
+.login-home {
+    padding:7px;
+}
+.login-home p{
+    display:inline;
+    margin: 7px;
+}
+
+.login-home .inicio {
+    display:block;
+    margin: 7px;
+}
+.login-home a {
+    color:#4C8034;
+    font-size: 15px;
+}
