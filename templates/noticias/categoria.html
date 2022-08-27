@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ nombre }}</title>
+</head>
+<body>
+    {% for noti in noticias_cat %}
+<li class="card" >
+    <div class="card-body">
+        {% if noti.imagen %}
+        <img class="card-img-top" src="{{ noti.imagen.url }}">
+        {% endif %}
+        <h3 class="card-title">{{noti.titulo}}</h3>
+        <p class="description"> {{noti.descripciones}}</p>
+        <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' noti.pk %}">Leer mas...</a>
+    </div>
+</li>
+    
+{%endfor%}
+</body>
+</html>

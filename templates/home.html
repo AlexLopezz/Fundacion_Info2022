@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-<link rel="stylesheet" href="{% static 'main1.css'%}">
+<link rel="stylesheet" href="{% static 'main.css'%}">
 <title>BOTELLAS DE AMOR</title> 
 {% endblock title %}
 
@@ -9,15 +9,20 @@
     <nav>
         <img class src="{% static 'img/logo.png'%}" alt="">
 
-
         <ul>
-            
+            <li>
+                <a href="{% url 'sobre nosotros' %}">Sobre Nosotros</a>
+            </li>
+
             {% if user.is_authenticated %}
             <li>
                 <a href="#">Usuario: {{ user.username }}</a>
             </li>
             <li>
                 <a href="{% url 'logout' %}">Cerrar Sesion</a>
+            </li>
+            <li>
+                <a href="{% url 'noticias' %}">Noticias</a>
             </li>
             {% else %}
             <li>
@@ -27,6 +32,7 @@
                 <a href="{% url 'registro' %}">Registrarse</a>
             </li>
             {% endif %}
+            
         </ul>
     </nav>
 

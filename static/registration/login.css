@@ -5,11 +5,11 @@
     font-family: 'Raleway', sans-serif;
 }
 body{
-    background-image: url('/static/img/fondo.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/static/img/fondo-registro-login.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-attachment: fixed;
+    background-attachment: fixed; 
     text-align: center;
 }
 .container{
@@ -17,6 +17,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 .form {
 
     width: 25%;
@@ -24,7 +25,7 @@ body{
     background-color: white;
     box-shadow: 0px 0px 10px #bce082;
     display: inline-block;
-    margin: 2.85rem;
+    margin: 2.80rem;
 }
 
 
@@ -32,6 +33,7 @@ body{
 .img{
     max-width: 45%;
 }
+
 input{
     width: 75%;
     padding: 10px;
@@ -43,7 +45,7 @@ label{
     font-size: 100%;
 }
 button{
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 10px;
     text-decoration: none;
     background-color: #84d600;
@@ -59,4 +61,22 @@ button{
 button:hover {
     background-color: #619a07;
     transition: all 0.4s;
+}
+button:hover {
+    background-color:#4C8034;
+    transition: all 0.4s;
+}
+p{
+    text-align: center;
+    padding-bottom: 20px;
+}
+a {
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color:#439B1B;
+    padding-bottom: 20px;
+
+
 }
