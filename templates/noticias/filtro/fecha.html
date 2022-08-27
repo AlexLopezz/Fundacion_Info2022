@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> Noticias </title>
+{% endblock title %}
+
+{% block contenido %}
+
+{% for noti in noticias %}
+<h3>{{ noti.titulo }}</h3>
+{% endfor %}
+
+{% endblock contenido %}
