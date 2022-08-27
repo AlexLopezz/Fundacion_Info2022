@@ -35,8 +35,7 @@ footer{
     padding: 2px;
 }
 
-<<<<<<< HEAD:static/registration/footer.css
-=======
+
 .pie-pagina .grupo-1 .box a{
     text-decoration: none;
     font-size:12px;
@@ -46,7 +45,7 @@ footer{
 .pie-pagina .grupo-1 .box a i {
     margin-right:8px;
 }
->>>>>>> matias:static/registration/footerr.css
+
 
 .pie-pagina .grupo-1 .box p {
     font-size: 12px;
@@ -104,15 +103,4 @@ footer{
         padding: 35px 0px;
     }
 }
-<<<<<<< HEAD:static/registration/footer.css
 
-a{
-    font-size: 13px;
-    color: #43A03B;
-}
-
-a:hover {
-    color: #4A7C33;
-}
-=======
->>>>>>> matias:static/registration/footerr.css
