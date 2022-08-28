@@ -35,7 +35,7 @@ footer{
     padding: 2px;
 }
 
-<<<<<<< HEAD:static/registration/footerr.css
+
 .pie-pagina .grupo-1 .box a{
     text-decoration: none;
     font-size:12px;
@@ -45,8 +45,7 @@ footer{
 .pie-pagina .grupo-1 .box a i {
     margin-right:8px;
 }
-=======
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963:static/registration/footer.css
+
 
 .pie-pagina .grupo-1 .box p {
     font-size: 12px;
@@ -97,6 +96,18 @@ footer{
 }
 
 @media screen and (max-width:800px){
+    footer {
+        height:29rem;
+    }
+    .pie-pagina .grupo-1 .box .imagen {
+        width:125px;
+    }
+    .pie-pagina .grupo-1 .box .red-social a {
+        font-size:57px;
+    }
+    .pie-pagina .grupo-1 .box h2 {
+        font-size:1rem;
+    }
     .pie-pagina .grupo-1{
         width: 80%;
         grid-template-columns: repeat(1, 1fr);
@@ -104,15 +115,3 @@ footer{
         padding: 35px 0px;
     }
 }
-<<<<<<< HEAD:static/registration/footerr.css
-=======
-
-a{
-    font-size: 13px;
-    color: #43A03B;
-}
-
-a:hover {
-    color: #4A7C33;
-}
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963:static/registration/footer.css

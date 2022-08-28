@@ -5,11 +5,9 @@
     font-family: 'Raleway', sans-serif;
 }
 body{
-<<<<<<< HEAD
+
     background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/static/img/fondo-registro-login.jpg');
-=======
-    background-color: #C6E377;
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -72,30 +70,40 @@ button:hover {
 }
 p{
     text-align: center;
-<<<<<<< HEAD
+
     padding-bottom: 20px;
-=======
-    padding bottom: 20px;
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
+
 }
 a {
 
     text-decoration: none;
-<<<<<<< HEAD
+
     font-size: 15px;
     font-weight: 600;
     color:#439B1B;
     padding-bottom: 20px;
 
 
-=======
-    font-weight: 600;
-    color:#5BE21B;
-    padding bottom: 20px;
-
 
 }
-a:hover {
-    color:#439B1B;
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
+
+@media screen and (min-width: 340px) {
+    .form {
+        width:75%;
+    }
+}
+@media screen and (min-width: 590px) {
+    .form {
+        width:55%;
+    }
+}
+@media screen and (min-width: 800px) {
+    .form {
+        width:35%;
+    }
+}
+@media screen and (min-width: 1220px) {
+    .form {
+        width:25%;
+    }
 }

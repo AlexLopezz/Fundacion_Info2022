@@ -1,9 +1,8 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-=======
+
 from django.db.models import Q
 from django.views.generic import DetailView
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
+
 from apps.noticias.models import Categoria, Comentario, Noticia 
 from django.contrib.auth import get_user_model
 from .forms import FormComentario
@@ -44,10 +43,6 @@ def categoria(request, cat):
     noticias_categoria = Noticia.objects.filter(categoria= cat)
     return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
-<<<<<<< HEAD
-def eventos(request):
-    return render(request, 'eventos/eventos.html')
-=======
 
 def buscarNoticias(request):
     busqueda = request.GET.get('buscar')
@@ -68,4 +63,4 @@ def buscarNoticias(request):
 
 def eventos(request):
     return render(request, 'eventos/eventos.html')
->>>>>>> 2840a536380616c6b586e16d71d02cd36173d963
+
