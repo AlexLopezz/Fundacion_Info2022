@@ -44,8 +44,7 @@ def categoria(request, cat):
     return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
 
-<<<<<<< HEAD
-=======
+
 def buscarNoticias(request):
     busqueda = request.GET.get('buscar')
     noticias = Noticia.objects.all()
@@ -63,7 +62,7 @@ def buscarNoticias(request):
 
 
 
->>>>>>> matias
+
 def eventos(request):
     return render(request, 'eventos/eventos.html')
 
