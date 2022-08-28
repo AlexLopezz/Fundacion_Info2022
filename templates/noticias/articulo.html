@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{% static 'noticias/articulo.css' %}">
+<<<<<<< HEAD
 
+=======
+=======
+    {% block title %}
+>>>>>>> 8bdaf1d4191be79b6bec70ae101f72f1aad08741
+>>>>>>> 19e433d1f53521f03d824a8fdee8f16bccb633ea
     <title> {{ noticia.titulo }} </title>
-</head>
-<body>
+    {% endblock title %}
+
+    {% block contenido %}
     <section>
         <h1> {{ noticia.titulo }} </h1>
             <small>Fecha de publicacion: {{ noticia.fechaCreacion }} </small>
@@ -43,5 +52,4 @@
             {%endif%}
             
         </section>        
-</body>
-</html>
+        {% endblock contenido %}
