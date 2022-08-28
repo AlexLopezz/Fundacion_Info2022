@@ -94,3 +94,137 @@ nav ul li a:hover {
     100% { margin-left: -250%; }
 
 }
+
+@media  screen and (min-width: 340px) and (max-width: 410px)  {
+    nav {
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        height:250px;
+        padding: 0;
+    }
+    nav img {
+        margin-left:0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    nav ul li {
+        margin: 8px;
+        width: 100%;
+        background-color: #619a07;
+        padding:8px;
+        text-align: center;
+    }
+    nav ul li a {
+        background-color: transparent;
+        box-shadow: none;
+        font-size: 12px;
+    }
+    .slider img {
+        width: 145px;
+        height:225px;
+    }
+}
+@media  screen and (min-width: 410px) and (max-width:540px) {
+    nav {
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        height:250px;
+        padding: 0;
+    }
+    nav img {
+        margin-left:0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    nav ul li {
+        margin: 8px;
+        width: 100%;
+        background-color: #619a07;
+        padding:8px;
+        text-align: center;
+    }
+    nav ul li a {
+        background-color: transparent;
+        box-shadow: none;
+        
+    }
+    .slider img {
+        width: 200px;
+        height:300px;
+    }
+}
+
+@media  screen and (min-width: 540px) and (max-width:700px) {
+    nav {
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        height:250px;
+        padding: 0;
+    }
+    nav img {
+        margin-left:0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    nav ul li {
+        margin: 8px;
+        width: 100%;
+        background-color: #619a07;
+        padding:8px;
+        text-align: center;
+    }
+    nav ul li a {
+        background-color: transparent;
+        box-shadow: none;
+        
+    }
+    .slider img {
+        width: 225px;
+        height:320px;
+    }
+}
+@media  screen and (min-width: 700px) and (max-width:800px) {
+    nav {
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+        height:250px;
+        padding: 0;
+    }
+    nav img {
+        margin-left:0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    nav ul li {
+        margin: 8px;
+        width: 100%;
+        background-color: #619a07;
+        padding:8px;
+        text-align: center;
+    }
+    nav ul li a {
+        background-color: transparent;
+        box-shadow: none;
+        
+    }
+    .slider img {
+        width: 285px;
+        height:380px;
+    }
+}
