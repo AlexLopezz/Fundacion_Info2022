@@ -8,7 +8,10 @@
 {% block contenido %}
 
 {% for noti in noticias %}
-<h3>{{ noti.titulo }}</h3>
+
+<h3>{{ noti.titulo}}</h3>
+<footer>{{ noti.autor }}</footer>
+
 {% endfor %}
 
 {% endblock contenido %}

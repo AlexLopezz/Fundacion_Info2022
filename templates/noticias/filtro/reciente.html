@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+</head>
+<body>
+    {% if noticias %}
+    {% for nr in noticias %}
+            {% if nr.imagen %}
+            <img class="card-img-top" src="{{ nr.imagen.url }}">
+            {% endif %}
+            <h3 class="card-title">{{nr.titulo}}</h3>
+            <p class="description"> {{nr.contenido|slice:500}}...</p>
+            <p>{{ nr.fechaCreacion }}</p>
+            <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' nr.pk %}">Leer mas...</a>
+    {%endfor%}
+    {%endif%}
+</body>
+</html>

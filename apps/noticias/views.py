@@ -1,12 +1,7 @@
 import random
 from re import template
 from django.shortcuts import render
-<<<<<<< HEAD
-from django.db.models import Q
-from django.views.generic import DetailView
-=======
 from django.views.generic import ListView
->>>>>>> 8bdaf1d4191be79b6bec70ae101f72f1aad08741
 from apps.noticias.models import Categoria, Comentario, Noticia 
 from django.contrib.auth import get_user_model
 from .forms import FormComentario
@@ -17,9 +12,11 @@ User = get_user_model()
 def noticias(request):
     todasNoticias = Noticia.objects.all() #Devuelve una lista.
     todasCategorias = Categoria.objects.all() #Devuelve una lista.
-    
-    noticiasRandom = random.sample(list(todasNoticias), 5)
-    
+    try:
+        noticiasRandom = random.sample(list(todasNoticias), 5)
+    except:
+        noticiasRandom = None
+        
     ctx={
         'noticias': todasNoticias, 
         'categorias': todasCategorias,
@@ -51,36 +48,13 @@ def categoria(request, cat):
     noticias_categoria = Noticia.objects.filter(categoria= cat)
     return render(request, 'noticias/filtro/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
-def noticiasRecientes(ListView):
-    model = Noticia
-    template_name = 'noticias/filtro/fecha.html'
+def noticiasRecientes(request):
+    noticias = Noticia.objects.all().order_by('-fechaCreacion') #Ordenamiento ascendente-descendente
+    return render(request, 'noticias/filtro/reciente.html',{'noticias':noticias})
 
-class NoticiasAntiguas(ListView):
-    model = Noticia
-    template_name = 'noticias/filtro/fecha.html'
-    def get(self, request, *args, **kwargs):
-        queryset = Noticia.objects.all().order_by("-fechaCreacion")
-        ctx={
-            'noticias': queryset
-        }
-        return render(request, self.template_name)
-
-def buscarNoticias(request):
-    busqueda = request.GET.get('buscar')
-    noticias = Noticia.objects.all()
-
-    if busqueda:
-        noticias = Noticia.objects.filter(
-            Q(titulo__icontains = busqueda) |
-            Q(autor__icontains = busqueda) |
-            Q(fechaCreacion__icontains = busqueda) |
-            Q(contenido__icontains = busqueda) |
-            Q(categoria__icontains = busqueda)
-        ).distinct()
-
-    return render(request, 'noticias/seccion_noticias.html', {'noticias': noticias})
-
-
+def noticiasAntiguas(request):
+    noticias = Noticia.objects.all().order_by('fechaCreacion') #Ordenamiento descendente-ascendente
+    return render(request,'noticias/filtro/antiguo.html',{'noticias': noticias})
 
 def eventos(request):
     return render(request, 'eventos/eventos.html')
