@@ -11,24 +11,24 @@
 <body>
     <h1>CALENDARIO DE EVENTOS</h1>
     <div id="calendar" style="padding:20px;"> </div>
-
-    <h2>Todos los eventos:</h2>
     {% if object_list%}
-    {% for evento in object_list %}
-        <h3>Evento: {{ evento.nombre }}</h3>
-        <footer>Fecha de inicio: {{ evento.fechaInicio|date:'d-m-Y' }}</footer> 
-        <footer>Fecha de fin: {{ evento.fechaFin|date:'d-m-Y' }}</footer> 
-        <footer>Lugar del evento: {{ evento.lugar }}</footer>
-        <p>Detalles: {{ evento.contenido }}</p>
-        <p>Modalidad: {{ evento.modalidad }}</p>
-        {% if evento.gratuito == False %}
-        <p>Gratuito: NO.</p>
-        {% else %}
-        <p>Gratuito: SI.</p>
-        {% endif%}
-
-    {% endfor %}
-    {% endif %}
+    <h2>Todos los eventos:</h2>
+        {% for evento in object_list %}
+            <h3>Evento: {{ evento.nombre }}</h3>
+            <footer>Fecha de inicio: {{ evento.fechaInicio|date:'d-m-Y' }}</footer> 
+            <footer>Fecha de fin: {{ evento.fechaFin|date:'d-m-Y' }}</footer> 
+            <footer>Lugar del evento: {{ evento.lugar }}</footer>
+            <p>Detalles: {{ evento.contenido }}</p>
+            <p>Modalidad: {{ evento.modalidad }}</p>
+                {% if evento.gratuito == False %}
+                <p>Gratuito: NO.</p>
+                {% else %}
+                <p>Gratuito: SI.</p>
+                {% endif%}
+        {% endfor %}
+    {% else %}
+    <h2>NO HAY EVENTOS DISPONIBLES.</h2>
+    {% endif%}
 
     <script src="{% static 'js/fullcalendar/lib/main.js' %}"></script>
     <script>
@@ -38,7 +38,7 @@
                 events: [
                     {% for evento in object_list %}
                         { 
-                            title: "Evento disponible: {{ evento.nombre }}",
+                            title: "->Evento disponible: {{ evento.nombre }}",
                             start: "{{ evento.fechaInicio | date:'Y-m-d'}}",
                             end: "{{ evento.fechaFin | date:'Y-m-d'}}",
                         },

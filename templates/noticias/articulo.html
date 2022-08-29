@@ -1,27 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{% static 'noticias/articulo.css' %}">
-<<<<<<< HEAD
-
-=======
-=======
-    {% block title %}
->>>>>>> 8bdaf1d4191be79b6bec70ae101f72f1aad08741
->>>>>>> 19e433d1f53521f03d824a8fdee8f16bccb633ea
-=======
 
     {% block title %}
+    <link rel="stylesheet" href="{% static 'noticias/noticias.css' %}">
     <link rel="stylesheet" href="{% static 'noticias/articulo.css' %}">
->>>>>>> de9435e8f7b3699d0bdc622add34ae493c3b7aa4
     <title> {{ noticia.titulo }} </title>
     {% endblock title %}
 
@@ -29,7 +11,9 @@
     <section>
         <h1> {{ noticia.titulo }} </h1>
             <small>Fecha de publicacion: {{ noticia.fechaCreacion }} </small>
+            {% if noticia.imagen %}
             <img src="{{ noticia.imagen.url }}">
+            {% endif %}
             <article>
                <p> {{ noticia.contenido }} </p>
             </article> 
