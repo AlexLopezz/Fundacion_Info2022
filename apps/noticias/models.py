@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import timedelta
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
@@ -9,7 +10,6 @@ class Categoria(models.Model):
         return self.nombre
     
 
-
 class Noticia(models.Model):
     titulo = models.CharField(max_length=150)
     autor = models.CharField(max_length=50, null = True, blank=True)
@@ -18,7 +18,6 @@ class Noticia(models.Model):
     imagen = models.ImageField(upload_to= 'noticias', null=True, blank = True)
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
 
-    
     def __str__(self) -> str:
         return self.titulo
 
@@ -31,9 +30,21 @@ class Comentario(models.Model):
     def __str__(self):
         return self.nombre.username
 
+class Modalidad(models.Model):
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
+
 class Evento(models.Model):
     nombre = models.CharField(max_length=150)
     contenido = models.CharField(max_length= 200)
     fechaInicio = models.DateField('Fecha de inicio', auto_now = False, auto_now_add= True)
     fechaFin = models.DateField('Fecha de finalizacion', auto_now= False, auto_now_add = False)
+    modalidad = models.ForeignKey(Modalidad, on_delete= models.CASCADE, null = True, blank = True)
+    estado = models.BooleanField(default = True, verbose_name = 'Estado')
+
+    def __str__(self):
+        return self.nombre
+
     
