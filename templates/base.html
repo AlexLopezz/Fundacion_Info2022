@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-
+    <link rel="stylesheet" href="{% static 'main.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
@@ -43,7 +43,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
-                    {% if user.is_autenticated %}
+                    {% if user.is_authenticated %}
                     <li>
                         <a class="nav-link" aria-current="page" href="#">Usuario: {{ user.username }}</a>
                     </li>
@@ -53,7 +53,7 @@
                     <li>
                         <a class="nav-link" aria-current="page" href="{% url 'noticias' %}">Noticias</a>
                     </li>
-                    <li class="nav-item">
+                    <li>
                         <a class="nav-link" href="{% url 'evento' %}">Eventos</a>
                     </li>
                     {% else %}
