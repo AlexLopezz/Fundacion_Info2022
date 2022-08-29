@@ -1,7 +1,6 @@
 import random
 from django.shortcuts import render
-from django.views.generic import ListView
-from apps.noticias.models import Categoria, Comentario, Noticia, Evento
+from apps.noticias.models import Categoria, Comentario, Noticia
 from django.contrib.auth import get_user_model
 from .forms import FormComentario
 # Create your views here.
@@ -55,17 +54,4 @@ def noticiasAntiguas(request):
     noticias = Noticia.objects.all().order_by('fechaCreacion') #Ordenamiento descendente-ascendente
     return render(request,'noticias/filtro/antiguo.html',{'noticias': noticias})
 
-<<<<<<< HEAD
 
-def eventos(request):
-    return render(request, 'eventos/eventos.html')
-
-=======
-class Eventos(ListView):
-    model = Evento
-    template_name = 'eventos.html'
-
-    def get_queryset(self):
-        queryset = self.model.objects.filter(estado=True)
-        return queryset
->>>>>>> de9435e8f7b3699d0bdc622add34ae493c3b7aa4
