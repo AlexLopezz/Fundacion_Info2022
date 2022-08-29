@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> Seccion de noticias </title>
+{% endblock title %}
+
+{% block contenido %}
+
+{% for noti in noticias %}
+    {% if noti.imagen %}
+    <img class="card-img-top" src="{{ noti.imagen.url }}">
+    {% endif %}
+    <h3 class="card-title">{{noti.titulo}}</h3>
+    <p class="description"> {{noti.contenido|slice:500}}...</p>
+    <p>{{ noti.fechaCreacion }}</p>
+    <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' noti.pk %}">Leer mas...</a>
+{% endfor %}
+
+{% endblock contenido %}

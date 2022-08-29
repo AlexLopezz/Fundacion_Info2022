@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+    <title>Noticias</title>
+{% endblock title %}
+
+{% block contenido %}
+    {% if noticias %}
+    {% for nr in noticias %}
+            {% if nr.imagen %}
+            <img class="card-img-top" src="{{ nr.imagen.url }}">
+            {% endif %}
+            <h3 class="card-title">{{nr.titulo}}</h3>
+            <p class="description"> {{nr.contenido|slice:500}}...</p>
+            <p>{{ nr.fechaCreacion }}</p>
+            <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' nr.pk %}">Leer mas...</a>
+    {%endfor%}
+    {%endif%}
+{% endblock contenido %}

@@ -18,14 +18,13 @@
 </head>
 
 <body>
+    
     <nav>
         <a href="{% url 'home' %}">Inicio</a>
         {% if user.is_authenticated %}
         <a href="{% url 'noticias' %}">Noticias</a>
         <a href="#">Usuario: {{ user.username }}</a>
         <a href="{% url 'logout' %}">Cerrar Sesion</a>
-
-
         {% endif %}
     </nav>
     <section>

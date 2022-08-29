@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+    {%block title%}
+    <title>{{ nombre }}</title>
+    {%endblock title%}
+
+    {%block contenido%}
+    {% if noticias_cat %}
+    {% for noti in noticias_cat %}
+        <li class="card" >
+            <div class="card-body">
+                {% if noti.imagen %}
+                <img class="card-img-top" src="{{ noti.imagen.url }}">
+                {% endif %}
+            <h3 class="card-title">{{noti.titulo}}</h3>
+            <p class="description"> {{noti.contenido|slice:500}}...</p>
+            <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' noti.pk %}">Leer mas...</a>
+            </div>
+        </li>
+    {%endfor%}
+    {%else%}
+    <h1>No hay noticias.</h1>
+    {% endif %}
+    {%endblock contenido%}

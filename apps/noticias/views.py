@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-from django.db.models import Q
 from django.views.generic import DetailView
 
 from apps.noticias.models import Categoria, Comentario, Noticia 
@@ -40,29 +38,17 @@ def articulo(request, art):
 
 def categoria(request, cat):
     cat_object = Categoria.objects.get(pk=cat)
-    noticias_categoria = Noticia.objects.filter(categoria= cat)
-    return render(request, 'noticias/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
+    try:
+        noticias_categoria = Noticia.objects.filter(categoria= cat)
+    except:
+        noticias_categoria = None
+    return render(request, 'noticias/filtro/categoria.html',{'nombre': cat_object.nombre,'noticias_cat': noticias_categoria})
 
+def noticiasRecientes(request):
+    noticias = Noticia.objects.all().order_by('-fechaCreacion') #Ordenamiento ascendente-descendente
+    return render(request, 'noticias/filtro/reciente.html',{'noticias':noticias})
 
-
-def buscarNoticias(request):
-    busqueda = request.GET.get('buscar')
-    noticias = Noticia.objects.all()
-
-    if busqueda:
-        noticias = Noticia.objects.filter(
-            Q(titulo__icontains = busqueda) |
-            Q(autor__icontains = busqueda) |
-            Q(fechaCreacion__icontains = busqueda) |
-            Q(contenido__icontains = busqueda) |
-            Q(categoria__icontains = busqueda)
-        ).distinct()
-
-    return render(request, 'noticias/seccion_noticias.html', {'noticias': noticias})
-
-
-
-
-def eventos(request):
-    return render(request, 'eventos/eventos.html')
+def noticiasAntiguas(request):
+    noticias = Noticia.objects.all().order_by('fechaCreacion') #Ordenamiento descendente-ascendente
+    return render(request,'noticias/filtro/antiguo.html',{'noticias': noticias})
 
