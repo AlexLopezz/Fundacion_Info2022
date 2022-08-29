@@ -2,8 +2,11 @@
 {% load static %}
 {% block title %}
 <title>Iniciar Sesion</title>
-<link rel="stylesheet" href="{% static 'registration/login.css' %}">
 
+<link rel="stylesheet" href="{% static 'registration/login.css' %}">
+{% endblock title %}
+
+{% block contenido %}
 <div class="container">
 
     <div class="form"><form action="" method="post">
@@ -16,6 +19,6 @@
         <a class="link" href="{% url 'registro' %}">Registrarse</a></p>
         <button type="submit">Iniciar sesión</button>
     </form></div>
-
 </div>
 {% endblock contenido %}
+
