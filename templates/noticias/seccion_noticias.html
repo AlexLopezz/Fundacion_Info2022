@@ -33,55 +33,6 @@
             </div>
         </div>
     </nav>
-<<<<<<< HEAD
-    <button class="btn btn-primary mt-5 ms-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
-        aria-controls="offcanvas">
-        Mas..
-    </button>
-
-    <!-- Contenido de off canvas  -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Mas Contenido</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                En este menú podrás descubrir todas tus posibilidades dentro de nuestra increíble página.
-            </div>
-            <div class="dropdown mt-4">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    id="dropdownMenu">
-                    categorias
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                    {% if categorias %}
-                    {% for cat in categorias %}
-                    <li><a href="{% url 'categoria' cat.pk %}" class="dropdown-item">{{ cat.nombre }}</a></li>
-                    {% endfor %}
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Contenido de off canvas, end.  -->
-
-    <section>
-        {% if noticias %}
-        {% for n in noticias %}
-        <li class="card">
-            <div class="card-body">
-                {% if n.imagen %}
-                <img class="card-img-top" src="{{ n.imagen.url }}">
-                {% endif %}
-                <h3 class="card-title">{{n.titulo}}</h3>
-                <p class="description"> {{n.contenido|slice:500}}...</p>
-                <p>{{ n.fechaCreacion }}</p>
-                <a class="btn btn-primary" style="margin-left: 16rem " href="{% url 'articulo' n.pk %}">Leer mas...</a>
-            </div>
-        </li>
-        {% endfor %}
-=======
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -139,7 +90,6 @@
                 </div>
             </li>
             {% endfor %}
->>>>>>> 19e433d1f53521f03d824a8fdee8f16bccb633ea
         {% else %}
             <h2>No hay noticias</h2>
         {% endif %}

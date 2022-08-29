@@ -1,208 +1,25 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{% static 'eventos/eventoss.css' %}">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'js/fullcalendar/lib/main.css' %}">
     <title>Eventos</title>
 </head>
-
 <body>
-    <div class=" container-fluid text-bg-success p-3 " style="height: 100vh;">
-        <h1 class="text-center">Eventos septiembre 2022</h1>
-        <div class="row text-center">
-            <div class="col">
-                Lun
-            </div>
-            <div class="col">
-                Mar
-            </div>
+    <h1>Libros reservados</h1>
+    <div id="calendar" style="padding:20px;"></div>
+    <script src="{% static 'js/fullcalendar/lib/main.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var calendarUI = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarUI,{
 
-            <div class="col">
-                Mier
-            </div>
-            <div class="col">
-                Jue
-            </div>
-            <div class="col">
-                Vier
-            </div>
-            <div class="col">
-                Sab
-            </div>
-            <div class="col">
-                Dom
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>1</p>
-
-            </div>
-            <div class="col">
-                <p>2</p>
-            </div>
-
-            <div class="col">
-                <p>3</p>
-                <button type="button" class="btn btn-light" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    evento de botellas
-                  </button>
-            </div>
-            <div class="col">
-                <p>4</p>
-            </div>
-            <div class="col">
-                <p>5</p>
-            </div>
-            <div class="col">
-                <p>6</p>
-            </div>
-            <div class="col">
-                <p>7</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>8</p>
-
-            </div>
-            <div class="col">
-                <p>9</p>
-            </div>
-
-            <div class="col">
-                <p>10</p>
-                <button type="button" class="btn btn-light" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    evento de botellas
-                  </button>
-            </div>
-            <div class="col">
-                <p>11</p>
-            </div>
-            <div class="col">
-                <p>12</p>
-            </div>
-            <div class="col">
-                <p>13</p>
-            </div>
-            <div class="col">
-                <p>14</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>15</p>
-
-            </div>
-            <div class="col">
-                <p>16</p>
-            </div>
-
-            <div class="col">
-                <p>17</p>
-                <button type="button" class="btn btn-light" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    evento de botellas
-                  </button>
-            </div>
-            <div class="col">
-                <p>18</p>
-            </div>
-            <div class="col">
-                <p>19</p>
-            </div>
-            <div class="col">
-                <p>20</p>
-            </div>
-            <div class="col">
-                <p>21</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>22</p>
-
-            </div>
-            <div class="col">
-                <p>23</p>
-            </div>
-
-            <div class="col">
-                <p>24</p>
-                <button type="button" class="btn btn-light" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    evento de botellas
-                  </button>
-            </div>
-            <div class="col">
-                <p>25</p>
-            </div>
-            <div class="col">
-                <p>26</p>
-            </div>
-            <div class="col">
-                <p>27</p>
-            </div>
-            <div class="col">
-                <p>28</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <p>29</p>
-
-            </div>
-            <div class="col">
-                <p>30</p>
-                <button type="button" class="btn btn-light" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  evento de botellas
-</button>
-
-            </div>
-
-            <div class="col bg-secondary">
-                <p>1</p>
-                
-            </div>
-            <div class="col bg-secondary">
-                <p>2</p>
-                
-            </div>
-            <div class="col bg-secondary">
-                <p>3</p>
-                
-            </div>
-            <div class="col bg-secondary">
-                <p>4</p>
-                
-            </div>
-            <div class="col bg-secondary">
-                <p>5</p>
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">evento de botellas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              se realizara un evento de reciclaje....
-            </div>
-          </div>
-        </div>
-      </div>
+            });
+            calendar.render();
+        })
+    </script>
 </body>
-
 </html>
