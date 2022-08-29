@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="{% static '/img/log.ico' %}">
     <link rel="stylesheet" href="{% static 'noticias/noticias.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -30,51 +31,56 @@
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
+
+
                         <a class="nav-link" href="{% url 'evento' %}">Eventos</a>
+
                     </li>
-                    
-                    
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'sobre nosotros' %}">Sobre Nosotros</a>
                     </li>
                 </ul>
-                
+
+                 <button class="btn btn-primary mt-5 ms-5" style="padding: 10px; width: 200px; margin-bottom: 35px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                         aria-controls="offcanvas">
+                        Más Contenido
+                </button>
+
             </div>
         </div>
     </nav>
-    <ul class="nav-menu dropdown">
-        <li><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">Ordenar por</a>
-        
-            <ul class="dropdown-menu">
-                <li class="nav-menu dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Categorias
-                        <ul class="dropdown-menu">
-                            {% if categorias %}
-                            {% for cat in categorias %}
-                                <li><a class="nav-link" aria-current="page" href="{% url 'categoria' cat.pk %}"> {{ cat.nombre }} </a></li>
-                            {% endfor %}
-                            {% endif %}
-                        </ul>
-                    </a>
-                </li>
-                <li><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" href="#">Fechas</a>
-                    <ul>
-                        <li><a class="nav-link" aria-current="page" href="#">Mas reciente</a></li>
-                        <li><a class="nav-link" aria-current="page" href="#">Mas antiguo</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+   
+    <!-- Contenido de off canvas  -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Mas Contenido</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                En este menú podrás descubrir todas tus posibilidades dentro de nuestra increíble página.
+            </div>
+            <div class="dropdown mt-4">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    id="dropdownMenu">
+                    categorias
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    {% if categorias %}
+                    {% for cat in categorias %}
+                    <li><a href="{% url 'categoria' cat.pk %}" class="dropdown-item">{{ cat.nombre }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Contenido de off canvas, end.  -->
 
     <section>
         {% if noticias %}
         {% for n in noticias %}
-        <li class="card" >
+        <li class="card">
             <div class="card-body">
                 {% if n.imagen %}
                 <img class="card-img-top" src="{{ n.imagen.url }}">
@@ -82,7 +88,7 @@
                 <h3 class="card-title">{{n.titulo}}</h3>
                 <p class="description"> {{n.contenido|slice:500}}...</p>
                 <p>{{ n.fechaCreacion }}</p>
-                <a class="btn btn-primary" style= "margin-left: 16rem " href="{% url 'articulo' n.pk %}">Leer mas...</a>
+                <a class="btn btn-primary" style="margin-left: 16rem " href="{% url 'articulo' n.pk %}">Leer mas...</a>
             </div>
         </li>
         {% endfor %}

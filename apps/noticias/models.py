@@ -31,3 +31,4 @@ class Comentario(models.Model):
     def __str__(self):
         return self.nombre.username
 
+

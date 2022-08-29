@@ -10,7 +10,7 @@ nav{
     text-align: center;
     width: 100%;
     padding: 10px;
-    background-color: #7dc40be4;
+    background-color: rgba(1, 122, 41, 0.561);
     display: flex;
 }
 nav a{
@@ -19,6 +19,10 @@ nav a{
     margin: 10px 10px;
     font-size: 20px;
     text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+nav a:hover {
+    color: white;
+    text-shadow: 0 0 3px white;
 }
 .container{
     display: flex;
@@ -46,7 +50,7 @@ body{
     padding: 15px;
     font-size: 50px;
     color: rgb(1, 122, 42);
-    text-shadow: 0 0 3px rgb(0, 0, 0);
+    text-shadow: 0 0 1px rgb(0, 0, 0);
 }
 
 .sobre-nosotros p{
@@ -103,9 +107,9 @@ body{
 }
 
 .img-descripcion img{
-    width: 250px;
+    width: 220px;
     border-radius: 100%;
-    height: 260px;
+    height: 240px;
     object-fit: cover;
     border: 4px solid rgb(104, 197, 119);
     margin: 30px;
@@ -120,13 +124,14 @@ body{
 }
 
 .box{
-    margin: 35px;
+    margin: 10px;
     text-align: center;
 }
 
-.box h3{
-    margin: 35px;
-    font-size: 30px;
+.box h2{
+    margin-bottom: 35px;
+    font-size: 50px;
+    color: #2e6907;
 }
 
 .como-funciona h2{
@@ -154,4 +159,86 @@ text-shadow: 0 0 1px rgb(58, 57, 57);
     font-size: 18px;
     color: hsl(120, 11%, 2%);
     text-shadow: 0 0 1px hsl(0, 0%, 0%);
+}
+
+@media screen and (min-width:320px) and (max-width:420px){
+    nav {
+        padding: 0;
+    }
+    
+    nav a{
+        font-size:12px;
+    }
+    .container-integrantes {
+        flex-direction: column;
+    }
+    .container-mision {
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+    .objetivo,.que-hacemos {
+        width: 85%;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width:420px) and (max-width:768px){
+    nav {
+        padding: 0;
+    }
+    
+    nav a{
+        font-size:12px;
+    }
+    .container-integrantes {
+        flex-direction: column;
+    }
+    .container-mision {
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+    .objetivo,.que-hacemos {
+        width: 85%;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:990px){
+    nav {
+        padding: 0;
+    }
+    
+    nav a{
+        font-size:12px;
+    }
+    .container-integrantes {
+        flex-direction: column;
+    }
+    .container-mision {
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+    .objetivo,.que-hacemos {
+        width: 85%;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width:990px) and (max-width:1224px){
+
+    
+
+    .img-descripcion img {
+        width:185px;
+    }
+
+}
+@media screen and (min-width:1224px) and (max-width:1440px){
+    
+    
+
+    .img-descripcion img {
+        width:235px;
+    }
+
 }
