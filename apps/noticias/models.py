@@ -31,3 +31,9 @@ class Comentario(models.Model):
     def __str__(self):
         return self.nombre.username
 
+class Evento(models.Model):
+    nombre = models.CharField(max_length=150)
+    contenido = models.CharField(max_length= 200)
+    fechaInicio = models.DateField('Fecha de inicio', auto_now = False, auto_now_add= True)
+    fechaFin = models.DateField('Fecha de finalizacion', auto_now= False, auto_now_add = False)
+    
