@@ -1,7 +1,37 @@
-div {
-    padding: 5px;
-}
+
 .col {
     border: 1px solid #fff;
 }
+#calendar a {
+    color: white;
+}
+.eventos {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.eventos-info {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.eventos-info p {
+    margin: 10px;
+}
+.header {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
 
+.header h1 {
+    margin-left: 95px;
+}
+.header a {
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 55px;
+    border-radius: 20px;
+}
