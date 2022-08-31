@@ -101,11 +101,11 @@ footer{
     text-decoration: none;
 }
 
-/* iframe {
+ iframe {
     position: absolute;
     left: 75px;
     bottom: 70px;
-} */
+} 
 @media  screen and (min-width: 340px) and (max-width: 540px) {
     footer {
         height:44rem;
